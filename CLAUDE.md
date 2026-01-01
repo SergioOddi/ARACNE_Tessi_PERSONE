@@ -25,11 +25,11 @@ TESSITORE CAPO (Master Orchestrator)
 
 ### Key Files
 
-- `ARACNE Tessi_PERSONE.md` - Main system prompt with complete character creation methodology (11 modules)
+- **`ARACNE_SYSTEM_PROMPT.md`** - **Unified executable system prompt** (USE THIS to run the system)
+- `ARACNE Tessi_PERSONE.md` - Original methodology documentation (11 modules)
 - `Scheda_(Personaggio).md` - Character sheet template (10 sections)
 - `Scheda Personaggi e integrazione con Universo Narrativo.md` - Extended template with narrative universe integration
-- `ARACNE PERSONE MULTIAGENTE/TESSITORE CAPO.md` - Orchestrator agent specification
-- `ARACNE PERSONE MULTIAGENTE/` - Individual agent prompts (PSYCHE, PERSONA, VOX, etc.)
+- `ARACNE PERSONE MULTIAGENTE/` - Individual agent prompts for reference (TESSITORE CAPO, PSYCHE, PERSONA, VOX, CONTEXTO, NEXUS, MEMORIA, EVOLUTIO)
 - `ARACNE PERSONE MULTIAGENTE/by Claude/` - Claude-generated agent variants
 - `ARACNE PERSONE MULTIAGENTE/by GPT/` - GPT-generated agent variants
 
@@ -58,6 +58,27 @@ TESSITORE CAPO (Master Orchestrator)
 8. Voce e Dialogo (Voice and Dialogue)
 9. Abilità e Competenze (Skills and Competencies)
 10. Arco del Personaggio (Character Arc)
+
+## How to Use ARACNE
+
+### Running the System
+1. Copy the contents of `ARACNE_SYSTEM_PROMPT.md`
+2. Paste it as a system prompt in Claude, GPT-4, or another advanced LLM
+3. Start a conversation - the system will guide you through character creation
+
+### Session Commands
+| Command | Action |
+|---------|--------|
+| `/nuovo` | Start new character |
+| `/stato` | Show current phase and decisions |
+| `/psiche` | Go to psychology phase |
+| `/fisico` | Go to physical appearance phase |
+| `/voce` | Go to voice/language phase |
+| `/contesto` | Go to background phase |
+| `/relazioni` | Go to relationships phase |
+| `/arco` | Go to transformation arc phase |
+| `/sintesi` | Generate complete character sheet |
+| `/conflitti` | Show open conflicts |
 
 ## Working with This Repository
 
