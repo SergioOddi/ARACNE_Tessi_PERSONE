@@ -23,17 +23,39 @@ TESSITORE CAPO (Master Orchestrator)
 └── EVOLUTIO (Character Arc & Transformation)
 ```
 
-### Key Files
+### Repository Structure
 
-- **`ARACNE_SYSTEM_PROMPT.md`** - **Unified executable system prompt v3.0** (USE THIS to run the system)
-- **`STATO_PROGETTO.md`** - **Persistent state file** (share at session start for continuity)
-- **`personaggi/`** - Character files directory (completed: `nome.md`, in progress: `nome_WIP.md`)
-- `ARACNE Tessi_PERSONE.md` - Original methodology documentation (11 modules)
-- `Scheda_(Personaggio).md` - Character sheet template (10 sections)
-- `Scheda Personaggi e integrazione con Universo Narrativo.md` - Extended template with narrative universe integration
-- `ARACNE PERSONE MULTIAGENTE/` - Individual agent prompts for reference (TESSITORE CAPO, PSYCHE, PERSONA, VOX, CONTEXTO, NEXUS, MEMORIA, EVOLUTIO)
-- `ARACNE PERSONE MULTIAGENTE/by Claude/` - Claude-generated agent variants
-- `ARACNE PERSONE MULTIAGENTE/by GPT/` - GPT-generated agent variants
+```
+ARACNE_Tessi_PERSONE/
+├── ARACNE_SYSTEM_PROMPT.md        # Main system prompt v3.0 (USE THIS!)
+├── ARACNE Tessi_PERSONE.md        # Methodology documentation
+├── README.md                       # Project overview
+├── CLAUDE.md                       # This file
+│
+├── ARACNE PERSONE MULTIAGENTE/    # Agent prompts
+│   ├── PSYCHE.md                  # Psychology & motivations
+│   ├── PERSONA.md                 # Physical design & presence
+│   ├── VOX.md                     # Voice & idiolect
+│   ├── CONTEXTO.md                # Socio-cultural background
+│   ├── NEXUS.md                   # Relationships & dynamics
+│   ├── MEMORIA.md                 # Repository & continuity
+│   └── EVOLUTIO.md                # Character arc & transformation
+│
+├── Template/                       # Reusable templates
+│   ├── Scheda_(Personaggio).md
+│   └── Scheda Personaggi e integrazione con Universo Narrativo.md
+│
+├── Personaggi/                     # Created characters
+│   └── [NomePersonaggio]/
+│       ├── [Nome]_v1.md
+│       └── Note_sviluppo.md
+│
+├── Esempi/                         # Output examples
+│
+└── Sistema/                        # Project management
+    ├── STATO_PROGETTO.md          # Session state (share at start!)
+    └── To_Do.md                   # Ideas & improvements
+```
 
 ## Core Methodology
 
@@ -101,10 +123,10 @@ TESSITORE CAPO (Master Orchestrator)
 
 ### Session Persistence (v3.0)
 
-The system solves the LLM stateless problem through `STATO_PROGETTO.md`:
+The system solves the LLM stateless problem through `Sistema/STATO_PROGETTO.md`:
 
 **Start of Session:**
-1. Share `STATO_PROGETTO.md` content with the LLM
+1. Share `Sistema/STATO_PROGETTO.md` content with the LLM
 2. ARACNE presents project summary and asks what to work on
 3. Continue from where you left off
 
@@ -113,12 +135,15 @@ The system solves the LLM stateless problem through `STATO_PROGETTO.md`:
 2. ARACNE generates updated `STATO_PROGETTO.md`
 3. Copy and replace the file in your project
 
-**File Structure:**
+**Character File Structure:**
 ```
-personaggi/
-├── mario.md          # Completed character
-├── lucia_WIP.md      # Work in progress
-└── marco_WIP.md      # Work in progress
+Personaggi/
+├── Mario/
+│   ├── Mario_v1.md       # First version
+│   ├── Mario_v2.md       # Revised version
+│   └── Note_sviluppo.md  # Development notes
+└── Lucia/
+    └── Lucia_WIP.md      # Work in progress
 ```
 
 ## Working with This Repository
@@ -130,7 +155,7 @@ personaggi/
 - Output templates use specific emoji markers for each agent
 
 ### When Creating Character Sheets
-- Follow the template structure in `Scheda_(Personaggio).md`
+- Follow the template structure in `Template/Scheda_(Personaggio).md`
 - Include data tables for key characteristics
 - Add symbolic interpretations for physical traits
 - Integrate with the 7 narrative universe elements (TOPOS, CHRONOS, EPOS, ETHOS, LOGOS, GENOS, TELOS) if worldbuilding is provided
