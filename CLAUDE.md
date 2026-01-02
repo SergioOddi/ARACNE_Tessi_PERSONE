@@ -25,7 +25,9 @@ TESSITORE CAPO (Master Orchestrator)
 
 ### Key Files
 
-- **`ARACNE_SYSTEM_PROMPT.md`** - **Unified executable system prompt** (USE THIS to run the system)
+- **`ARACNE_SYSTEM_PROMPT.md`** - **Unified executable system prompt v3.0** (USE THIS to run the system)
+- **`STATO_PROGETTO.md`** - **Persistent state file** (share at session start for continuity)
+- **`personaggi/`** - Character files directory (completed: `nome.md`, in progress: `nome_WIP.md`)
 - `ARACNE Tessi_PERSONE.md` - Original methodology documentation (11 modules)
 - `Scheda_(Personaggio).md` - Character sheet template (10 sections)
 - `Scheda Personaggi e integrazione con Universo Narrativo.md` - Extended template with narrative universe integration
@@ -67,10 +69,27 @@ TESSITORE CAPO (Master Orchestrator)
 3. Start a conversation - the system will guide you through character creation
 
 ### Session Commands
+
+**Project & Session Management**
+| Command | Action |
+|---------|--------|
+| `/carica` | Load STATO_PROGETTO.md and show summary |
+| `/salva` | Generate updated STATO_PROGETTO.md |
+| `/progetto` | Show full project overview |
+| `/universo` | Work on worldbuilding |
+
+**Character Management**
 | Command | Action |
 |---------|--------|
 | `/nuovo` | Start new character |
 | `/stato` | Show current phase and decisions |
+| `/lista` | Show all characters (completed + WIP) |
+| `/apri [nome]` | Open/continue existing character |
+| `/esporta [nome]` | Generate character markdown file |
+
+**Creation Phases**
+| Command | Action |
+|---------|--------|
 | `/psiche` | Go to psychology phase |
 | `/fisico` | Go to physical appearance phase |
 | `/voce` | Go to voice/language phase |
@@ -79,6 +98,28 @@ TESSITORE CAPO (Master Orchestrator)
 | `/arco` | Go to transformation arc phase |
 | `/sintesi` | Generate complete character sheet |
 | `/conflitti` | Show open conflicts |
+
+### Session Persistence (v3.0)
+
+The system solves the LLM stateless problem through `STATO_PROGETTO.md`:
+
+**Start of Session:**
+1. Share `STATO_PROGETTO.md` content with the LLM
+2. ARACNE presents project summary and asks what to work on
+3. Continue from where you left off
+
+**End of Session:**
+1. Say "salva" or `/salva`
+2. ARACNE generates updated `STATO_PROGETTO.md`
+3. Copy and replace the file in your project
+
+**File Structure:**
+```
+personaggi/
+├── mario.md          # Completed character
+├── lucia_WIP.md      # Work in progress
+└── marco_WIP.md      # Work in progress
+```
 
 ## Working with This Repository
 
